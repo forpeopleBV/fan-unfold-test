@@ -4,7 +4,7 @@ import { ControlPanel } from './components/ControlPanel'
 import { collections } from './data/collections'
 import { useKeyboardPanel } from './hooks/useKeyboardPanel'
 
-const MOVEMENT_DURATION = 920
+const MOVEMENT_DURATION = 820
 const REST_DURATION = 320
 
 function App() {
@@ -15,7 +15,6 @@ function App() {
   const { isOpen, setIsOpen } = useKeyboardPanel()
 
   const assetIndex = cycle % collections.length
-  const isForward = cycle % 2 === 0
   const activeCollection = collections[assetIndex]
 
   useEffect(() => {
@@ -51,7 +50,6 @@ function App() {
           echoCount={echoCount}
           echoStartDelay={echoStartDelay}
           echoGap={echoGap}
-          isForward={isForward}
         />
         <p className="sr-only">Showing the {activeCollection.name} collection</p>
       </section>

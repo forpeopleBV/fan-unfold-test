@@ -37,7 +37,7 @@ export function ControlPanel({
         <input
           type="range"
           min="0"
-          max="40"
+          max="5"
           step="1"
           value={echoCount}
           onChange={(event) => onEchoCountChange(Number(event.target.value))}

@@ -8,13 +8,19 @@ import { preloadImage } from './utils/imagePreloader'
 const root = createRoot(document.getElementById('root')!)
 const [firstCollection, ...nextCollections] = collections
 
-// Start every request immediately. Only the first card blocks the initial render;
-// the following cards finish warming the browser cache in the background.
+// Start every request immediately. The active collection gets priority while
+// all following cards and their echoes warm the browser cache in the background.
 for (const collection of nextCollections) {
-  void preloadImage(collection.image).catch(() => undefined)
+  for (const image of [collection.image, ...collection.echoes]) {
+    void preloadImage(image).catch(() => undefined)
+  }
 }
 
-void preloadImage(firstCollection.image, 'high').catch(() => undefined).then(() => {
+void Promise.all(
+  [firstCollection.image, ...firstCollection.echoes].map((image) =>
+    preloadImage(image, 'high').catch(() => undefined),
+  ),
+).then(() => {
   root.render(
     <StrictMode>
       <App />
