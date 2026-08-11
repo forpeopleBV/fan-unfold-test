@@ -1,7 +1,7 @@
 :root {
   color: #080808;
   background: #fbfbfa;
-  font-family: 'Google Sans Flex', 'Google Sans', Arial, Helvetica, sans-serif;
+  font-family: 'Google Sans', Arial, Helvetica, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   --card-width: clamp(6.8rem, 8.4vw, 10.1rem);
@@ -162,7 +162,7 @@ button {
   font-size: clamp(2.8rem, 4.5vw, 5.4rem);
   font-weight: 500;
   letter-spacing: -0.065em;
-  line-height: 0.92;
+  line-height: 1.08;
 }
 
 .release-date {
