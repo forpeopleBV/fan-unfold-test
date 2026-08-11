@@ -15,7 +15,7 @@ type CardStyle = CSSProperties & {
 }
 
 const MOVEMENT_DURATION_SECONDS = 0.82
-const SNAPPY_EASE = [0.85, 0, 0.15, 1] as const
+const SNAPPY_EASE = [0.9, 0, 0.1, 1] as const
 
 function randomAngle(seed: number, min: number, max: number) {
   const value = Math.abs(Math.sin(seed * 12.9898) * 43758.5453) % 1
