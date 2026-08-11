@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { memo, type CSSProperties } from 'react'
 import { collections } from '../data/collections'
 
 interface CardPendulumProps {
@@ -16,7 +16,7 @@ type AnimationStyle = CSSProperties & {
   '--layer': number
 }
 
-export function CardPendulum({
+export const CardPendulum = memo(function CardPendulum({
   assetIndex,
   cycle,
   echoCount,
@@ -40,8 +40,12 @@ export function CardPendulum({
           <img
             className={`pendulum__card ${isForward ? 'is-forward' : 'is-reverse'}`}
             src={collection.image}
+            width="161"
+            height="331"
             alt=""
             aria-hidden="true"
+            decoding="async"
+            fetchPriority={assetIndex === 0 ? 'high' : 'auto'}
             draggable="false"
             key={`${cycle}-${assetIndex}-${index}`}
             style={style}
@@ -50,4 +54,4 @@ export function CardPendulum({
       })}
     </div>
   )
-}
+})

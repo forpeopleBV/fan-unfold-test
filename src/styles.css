@@ -102,6 +102,7 @@ button {
   left: 72%;
   width: 0;
   height: 0;
+  contain: layout style;
 }
 
 .pendulum__card {
@@ -117,6 +118,7 @@ button {
   pointer-events: none;
   user-select: none;
   transform-origin: 50% 0;
+  backface-visibility: hidden;
   animation-duration: var(--movement-duration);
   animation-delay: var(--echo-delay);
   animation-fill-mode: both;
