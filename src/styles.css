@@ -136,6 +136,112 @@ button {
   font-weight: 600;
 }
 
+.shader-controls {
+  position: fixed;
+  top: clamp(5.25rem, 11vh, 7.5rem);
+  left: clamp(1.25rem, 3.2vw, 4rem);
+  z-index: 30;
+  display: grid;
+  width: min(18rem, calc(100vw - 2.5rem));
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid rgb(0 0 0 / 14%);
+  border-radius: 0.9rem;
+  background: rgb(251 251 250 / 86%);
+  box-shadow: 0 0.8rem 2.4rem rgb(0 0 0 / 12%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.shader-controls__heading,
+.shader-controls label > span,
+.shader-controls__color {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.shader-controls__heading {
+  margin-bottom: 0.15rem;
+  font-size: 0.8rem;
+  letter-spacing: -0.02em;
+}
+
+.shader-controls kbd {
+  min-width: 1.35rem;
+  padding: 0.18rem 0.35rem;
+  border: 1px solid rgb(0 0 0 / 18%);
+  border-radius: 0.25rem;
+  background: rgb(255 255 255 / 70%);
+  font-size: 0.62rem;
+  text-align: center;
+}
+
+.shader-controls label {
+  display: grid;
+  gap: 0.45rem;
+  color: #161616;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.shader-controls output {
+  color: rgb(0 0 0 / 58%);
+  font-size: 0.66rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+.shader-controls input[type='range'] {
+  width: 100%;
+  accent-color: #19194f;
+}
+
+.shader-controls__color {
+  grid-template-columns: 1fr auto;
+}
+
+.shader-controls__color input {
+  width: 2.1rem;
+  height: 1.4rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.3rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.shader-controls__file {
+  padding-top: 0.1rem;
+}
+
+.shader-controls__file > span output {
+  max-width: 8.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shader-controls__file input {
+  width: 100%;
+  color: rgb(0 0 0 / 70%);
+  font: inherit;
+  font-size: 0.63rem;
+}
+
+.shader-controls__file input::file-selector-button {
+  margin-right: 0.55rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgb(0 0 0 / 18%);
+  border-radius: 0.3rem;
+  background: #fff;
+  color: #161616;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
 .hero-copy {
   position: absolute;
   top: 50%;
@@ -293,7 +399,7 @@ button {
   width: 110%;
   height: 110%;
   max-width: none;
-  object-fit: cover;
+  display: block;
   transform: translate3d(0, var(--parallax-background-y, 0), 0) scale(1.02);
   will-change: transform;
 }
@@ -303,7 +409,7 @@ button {
   width: min(69.35vw, 83.22rem);
   min-width: 36rem;
   aspect-ratio: 1331.505 / 803;
-  transform: translate3d(0, var(--parallax-browser-y, 0), 0) scale(var(--browser-scale, 0.9));
+  transform: translate3d(0, var(--parallax-browser-y, 0), 0) scale(var(--browser-scale, 0.85));
   transform-origin: center;
   filter: drop-shadow(0 0.41rem 3.77rem rgb(0 0 0 / 5%));
   will-change: transform;
