@@ -24,8 +24,8 @@ import workEcho4 from '../../Asset/work/Frame 960329.png'
 import workEcho5 from '../../Asset/work/Frame 960333.png'
 
 export const collections = [
-  { name: 'Work', image: work, echoes: [workEcho1, workEcho2, workEcho3, workEcho4, workEcho5], color: '#5b57f5' },
-  { name: 'Create', image: create, echoes: [createEcho1, createEcho2, createEcho3, createEcho4, createEcho5], color: '#f3a149' },
-  { name: 'Live', image: live, echoes: [liveEcho1, liveEcho2, liveEcho3, liveEcho4, liveEcho5], color: '#27cfa8' },
-  { name: 'Game', image: game, echoes: [gameEcho1, gameEcho2, gameEcho3, gameEcho4, gameEcho5], color: '#cd3bff' },
+  { name: 'Work', image: work, echoes: [workEcho1, workEcho2, workEcho3, workEcho4, workEcho5], color: 'var(--color-collections-work)' },
+  { name: 'Create', image: create, echoes: [createEcho1, createEcho2, createEcho3, createEcho4, createEcho5], color: 'var(--color-collections-create)' },
+  { name: 'Live', image: live, echoes: [liveEcho1, liveEcho2, liveEcho3, liveEcho4, liveEcho5], color: 'var(--color-collections-live)' },
+  { name: 'Game', image: game, echoes: [gameEcho1, gameEcho2, gameEcho3, gameEcho4, gameEcho5], color: 'var(--color-collections-game)' },
 ] as const

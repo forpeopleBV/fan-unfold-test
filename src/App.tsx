@@ -4,6 +4,9 @@ import { CardPendulum } from './components/CardPendulum'
 import { HalftoneBackground, type HalftoneSettings } from './components/HalftoneBackground'
 import { collections } from './data/collections'
 import portalBackground from '../Asset/section-2-playground.png'
+import browserBack from '../Asset/browser-back.svg'
+import browserForward from '../Asset/browser-forward.svg'
+import browserLock from '../Asset/browser-lock.svg'
 
 const MOVEMENT_DURATION = 820
 const REST_DURATION = 320
@@ -14,12 +17,12 @@ const LAST_ECHO_DELAY = ECHO_START_DELAY + (ECHO_COUNT - 1) * ECHO_GAP
 const TOTAL_CYCLE_TIME = MOVEMENT_DURATION + LAST_ECHO_DELAY + REST_DURATION
 
 const placeholderSections = [
-  { number: '03', color: '#5485ff', tone: 'dark' },
-  { number: '04', color: '#ffc562', tone: 'dark' },
-  { number: '05', color: '#00ddd0', tone: 'dark' },
-  { number: '06', color: '#b159ff', tone: 'light' },
-  { number: '07', color: '#0c4787', tone: 'light' },
-  { number: '08', color: '#cd8814', tone: 'dark' },
+  { number: '03', color: 'var(--color-collections-work)', tone: 'dark' },
+  { number: '04', color: 'var(--color-collections-create)', tone: 'dark' },
+  { number: '05', color: 'var(--color-collections-live)', tone: 'dark' },
+  { number: '06', color: 'var(--color-collections-game)', tone: 'light' },
+  { number: '07', color: 'var(--color-ocean)', tone: 'light' },
+  { number: '08', color: 'var(--color-orange)', tone: 'dark' },
 ]
 
 const storySteps = ['Intro', 'Purpose', 'Process', 'Collections', 'Future', 'Future', 'EDG', 'Dummy']
@@ -28,8 +31,8 @@ const initialShaderSettings: Required<HalftoneSettings> = {
   dotSize: 6,
   contrast: 1.2,
   dotSoftness: 0.33,
-  darkColor: [0, 0.24705882370471954, 1, 1],
-  lightColor: [0.6924276351928711, 0.34823843836784363, 1, 1],
+  darkColor: [0.23529411852359772, 0.10980392247438431, 0.3490196168422699, 1], // Dell Dusk
+  lightColor: [0, 0.7058823704719543, 0.6784313917160034, 1], // Dell Collections Create
   dotSpacing: 0.3,
   mouseRadius: 600,
   mouseStrength: 0.3,
@@ -241,23 +244,26 @@ function App() {
             <div className="portal-browser__window">
               <div className="portal-video-frame" data-video-frame aria-label="Video frame reserved for future video upload">
                 <video className="portal-video-frame__media" muted playsInline />
-                <div className="portal-video-frame__glass" aria-hidden="true" />
               </div>
 
               <div className="portal-browser__toolbar" aria-hidden="true">
-                <div className="portal-browser__window-controls">
-                  <span />
-                  <span />
-                  <span />
+                <div className="portal-browser__navigation">
+                  <img src={browserBack} alt="" />
+                  <img src={browserForward} alt="" />
                 </div>
-                <div className="portal-browser__address">27c.dell.com</div>
+                <div className="portal-browser__address">
+                  <img src={browserLock} alt="" />
+                  <span>c27.dell.com</span>
+                </div>
                 <div className="portal-browser__toolbar-actions">
+                  <span />
                   <span />
                   <span />
                 </div>
               </div>
             </div>
           </div>
+          <p className="portal-coming-soon">Coming soon</p>
         </div>
       </section>
 
